@@ -1,0 +1,320 @@
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background: #212529;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar .logo {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    color: #f8f9fa;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #0d6efd;
+  }
+  
+  /* Slider */
+  .slider {
+    height: 60vh;
+    background-image: url('https://images.unsplash.com/photo-1514511547123-09c2202f55fb?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .slider-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .slider-content {
+    color: #fff;
+    text-align: center;
+  }
+  
+  .slider-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .slider-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Secciones */
+  .section {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: #212529;
+  }
+/* Sección de Categorías */
+#categorias {
+    padding: 4rem 3rem; /* Más espacio dentro de la sección */
+    background-color: #f4f4f4; /* Fondo más suave y elegante */
+    border-radius: 20px;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin: 3rem auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); /* Sombra más profunda */
+    border: 1px solid #e0e0e0; /* Borde sutil para un toque más refinado */
+    overflow: hidden; /* Asegura que los elementos dentro no sobresalgan */
+}
+
+/* Título de la sección */
+.section-title {
+    font-size: 2.8rem;
+    color: #1e3d7b;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    animation: slideInFade 1.2s ease-out forwards;
+    opacity: 0;
+  }
+  
+  /* Línea decorativa debajo del título */
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    margin: 1rem auto 0;
+    border-radius: 5px;
+    animation: pulseLine 2s infinite;
+  }
+  
+  /* Animación de entrada */
+  @keyframes slideInFade {
+    0% {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Animación decorativa de la línea */
+  @keyframes pulseLine {
+    0%, 100% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scaleX(1.2);
+      opacity: 0.7;
+    }
+  }
+  
+ /* Grid de Categorías */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10rem;
+    padding: 0 2rem;
+    max-width: 100%; /* Eliminar el contenedor fijo */
+    margin: 0 auto;
+    }/* Fuente personalizada */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+
+/* Tarjeta de categoría */
+.category-card {
+  background-color: #ffffff;
+  padding: 2rem 2rem;
+  border-radius: 20px;
+  border: 3px solid #3498db;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 18px rgba(52, 152, 219, 0.15);
+  font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+  height: 20%;
+}
+
+/* Estilo de los íconos con animación */
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #3498db;
+    position: relative;
+    animation: iconBounce 0.9s ease-out forwards; /* Añadido iconBounce */
+    top: -40px;
+  }
+
+/* Título centrado debajo de cada tarjeta */
+.category-title {
+  font-size: 2rem; /* Título más grande */
+  font-weight: 700; /* Fuente más fuerte */
+  color: #2c3e50; /* Elegante color oscuro */
+  margin-top: 1rem;
+  font-family: 'Roboto', sans-serif; /* Fuente elegida */
+  text-transform: capitalize;
+  animation: deliveryBounce 0.9s ease-out forwards;
+  text-align: center;
+}
+
+/* Grid de tarjetas */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Responsivo tablets */
+@media (max-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsivo móviles */
+@media (max-width: 600px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animación estilo delivery */
+@keyframes deliveryBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animación estilo delivery para los íconos */
+@keyframes iconBounce {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-5px) scale(1.05);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+
+
+
+  /* Botones */
+  .btn {
+    padding: 0.6rem 1.4rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #0d6efd;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0b5ed7;
+  }
+  
+  .btn-secondary {
+    background-color: #20c997;
+    color: white;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #17a589;
+  }
+  
+  /* Contacto */
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Footer */
+  .footer {
+    background: #212529;
+    color: #f8f9fa;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .footer p {
+    margin: 0.3rem 0;
+  }
+
