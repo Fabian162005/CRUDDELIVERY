@@ -1,26 +1,18 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import './App.css';
-import Productos from './pages/Productos'; // Importa tu componente Productos
+import Productos from './pages/Productos'; // Importa el componente Productos
+import Slider from './pages/Slider'; // Importa el componente Productos
+import Login from './pages/Login';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      {/* Opcional: Puedes mantener esto si quieres */}
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noopener noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      
-      {/* Renderiza tu componente Productos */}
-      <Productos />
+      <Login/> 
+      <Slider/> 
+      <Productos/>
     </>
   );
 }
