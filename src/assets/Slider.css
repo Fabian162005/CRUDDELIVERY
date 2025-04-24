@@ -1,0 +1,128 @@
+/* Slider container - Asegura que el slider ocupe el 100% del ancho y que se vea correctamente en todas las pantallas */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;  /* Esto se ajusta dependiendo del tamaño que deseas para el slider */
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imágenes dentro del slider */
+.slider-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Imágen activa */
+.slider-container img.active {
+    opacity: 1;
+}
+
+/* Botones de navegación */
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+/* Estilo de los botones de navegación */
+.nav-buttons button {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+}
+
+/* Efectos de los dots de navegación */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dots button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dots button:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.dots button.active {
+    background-color: #3498db; /* Color destacado para el punto activo */
+    transform: scale(1.3);
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .slider-container {
+        height: 400px; /* Ajustamos el alto del slider en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-container {
+        height: 300px; /* Ajustamos aún más para pantallas móviles */
+    }
+}
+.logout-container {
+    border-top: 1px solid #ddd;
+    padding: 1rem;
+    margin-top: auto;
+  }
+  
+  .logout-button {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: #ef4444;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    color: #dc2626;
+  }
+  
+  .logout-icon {
+    font-size: 1.2rem;
+  }
+  

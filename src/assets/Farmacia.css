@@ -1,0 +1,148 @@
+.pharmacy-page-container {
+    padding: 20px;
+    background-color: #f3f9f5;
+    font-family: Arial, sans-serif;
+  }
+  
+  .pharmacy-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .pharmacy-header h2 {
+    font-size: 2.5rem;
+    color: #2e8b57;
+  }
+  
+  .pharmacy-header p {
+    font-size: 1.2rem;
+    color: #4c4c4c;
+  }
+  
+  .pharmacy-categories-top {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .pharmacy-categories-top button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .pharmacy-categories-top button:hover {
+    background-color: #218838;
+  }
+  
+  .pharmacy-categories-top .active {
+    background-color: #1e7e34;
+  }
+  
+  .pharmacy-main-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+  }
+  
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    flex: 1;
+  }
+  
+  .product-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 12px;
+  }
+  
+  .product-card h4 {
+    font-size: 1.2rem;
+    margin: 10px 0 5px;
+    color: #333;
+  }
+  
+  .product-card .price {
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .product-card .stock {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .add-to-cart {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #218838;
+  }
+  
+  .cart-preview {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 350px;
+    align-self: flex-start;
+  }
+  
+  .cart-preview h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  
+  .cart-preview ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1rem;
+  }
+  
+  .cart-preview li {
+    margin-bottom: 8px;
+    color: #444;
+    text-align: center;
+  }
+  
+  .cart-total {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  

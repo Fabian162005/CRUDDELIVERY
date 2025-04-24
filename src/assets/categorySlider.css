@@ -1,3 +1,6 @@
+
+@import "tailwindcss";
+
 .category-slider {
     overflow-x: auto;
     overflow-y: hidden;

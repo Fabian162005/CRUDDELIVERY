@@ -1,0 +1,168 @@
+/* Contenedor general */
+.food-page-container {
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff8f0;
+    color: #333;
+  }
+  
+  /* Encabezado */
+  .food-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .food-header h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #d35400;
+  }
+  
+  /* Categorías arriba */
+  .food-categories-top {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .food-categories-top button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f7d6b3;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: bold;
+  }
+  
+  .food-categories-top button.active,
+  .food-categories-top button:hover {
+    background-color: #e67e22;
+    color: white;
+  }
+  
+  /* Layout principal: productos + carrito */
+  .food-main-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  /* Productos */
+  .products {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Tarjeta de producto */
+  .product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .product-card img {
+    width: 100%;
+    max-height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .product-card h4 {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #c0392b;
+  }
+  
+  .price {
+    font-weight: bold;
+    color: #27ae60;
+    margin: 5px 0;
+  }
+  
+  .stock {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+  }
+  
+  /* Botón añadir */
+  .add-to-cart {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    background-color: #e67e22;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #d35400;
+  }
+  
+  /* Carrito */
+  .cart-preview {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    align-self: flex-start;
+  }
+  
+  .cart-preview h3 {
+    margin-bottom: 15px;
+    color: #d35400;
+  }
+  
+  .cart-preview ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 10px;
+  }
+  
+  .cart-preview li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+  }
+  
+  .cart-total {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #27ae60;
+    text-align: right;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .food-main-layout {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .products {
+      grid-template-columns: 1fr;
+    }
+  
+    .cart-preview {
+      width: 100%;
+      margin-top: 30px;
+    }
+  }
+  

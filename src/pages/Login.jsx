@@ -1,62 +1,92 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../assets/Login.css';
 
-function App() {
+const Login = ({ setIsAuthenticated }) => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [mensaje, setMensaje] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!name || !password || !confirmPassword) {
       setError('Por favor completa todos los campos');
+      setMensaje('');
       return;
     }
 
     if (password !== confirmPassword) {
       setError('Las contraseñas no coinciden');
+      setMensaje('');
       return;
     }
 
-    setError('');
-    setMensaje(`¡Bienvenido, ${name}!`); // Corrección: template literal para interpolar el nombre
-    // Aquí podrías enviar la data al backend
+    if (name === 'Admin' && password === '1234') {
+      localStorage.setItem('isAuthenticated', 'true');
+      setIsAuthenticated(true);
+      setError('');
+      setMensaje(`¡Bienvenido, ${name}!`);
+      navigate('/'); // Redirige al home después de iniciar sesión
+    } else {
+      setError('Credenciales incorrectas');
+      setMensaje('');
+    }
   };
 
   return (
-    <div style={{ maxWidth: '400px', margin: '50px auto', padding: '20px', border: '1px solid #ccc' }}>
-      <h2>Iniciar Sesión</h2>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        <input
-          type="text"
-          placeholder="Nombre"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+    <div className="login-body">
+      <div className="login-container">
+        <h2 className="login-title">Iniciar Sesión</h2>
+        <form onSubmit={handleSubmit} className="login-form">
+          <input
+            type="text"
+            placeholder="Nombre"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="login-input"
+          />
 
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <div className="login-password-wrapper">
+            <input
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Contraseña"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="login-input"
+            />
+            <span className="login-eye-icon" onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? '🙈' : '👁️'}
+            </span>
+          </div>
 
-        <input
-          type="password"
-          placeholder="Verificar Contraseña"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
+          <div className="login-password-wrapper">
+            <input
+              type={showConfirm ? 'text' : 'password'}
+              placeholder="Verificar Contraseña"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className="login-input"
+            />
+            <span className="login-eye-icon" onClick={() => setShowConfirm(!showConfirm)}>
+              {showConfirm ? '🙈' : '👁️'}
+            </span>
+          </div>
 
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        {mensaje && <p style={{ color: 'green' }}>{mensaje}</p>}
+          {error && <p className="login-error">{error}</p>}
+          {mensaje && <p className="login-mensaje">{mensaje}</p>}
 
-        <button type="submit">Enviar</button>
-      </form>
+          <button type="submit" className="login-button">Enviar</button>
+        </form>
+      </div>
     </div>
   );
-}
+};
 
-export default App;
+export default Login;
